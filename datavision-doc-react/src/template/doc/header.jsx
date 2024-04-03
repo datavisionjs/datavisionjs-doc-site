@@ -1,14 +1,21 @@
-import Header from "./header";
+import { Link } from "react-router-dom";
+import MenuButton from "./menu-button";
 
 const Header = () => {
     
     return (
-        <div className="site-header">
+        <div className="doc-header">
             <div className="left">
-                <h3>DATAVISION</h3>
+                <a href="/"><h3>DATAVISION</h3></a>
             </div>
             <div className="right">
-                <a href="">GitHub</a>
+                <div className="menu-button-container">
+                    <MenuButton id="left-menu-bar" />
+                </div>
+                <div className="link-list">
+                    <Link to="/docs">Home</Link>
+                    <a target="_blank" href="https://github.com/datavisionjs/datavision.js">GitHub</a>
+                </div>
             </div>
         </div>
     );

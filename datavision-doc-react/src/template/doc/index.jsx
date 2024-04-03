@@ -1,14 +1,14 @@
 
+import Header from "./header";
+import Body from "./body";
+
 
 const Doc = () => {
   
     return (
         <div className="doc-page">
             <Header />
-
-            <div className="doc-content">
-                
-            </div>
+            <Body />
         </div>
     );
 };
