@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Open Sans, sans-serif !important;
+}
+
+body, a {
+    color: #606060;
+}
+
+.home-page {
+    padding: 30px 0px;
+    margin: 30px 0px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.home-content {
+    max-width: 700px;
+    margin: auto;
+}
+
+.home-footer {
+    padding: 20px;
+    text-align: center;
+}
+
+.doc-page {
+    padding: 20px 30px;
+}
+
+.doc-description {
+    padding: 20px 0px;
+}
+
+/* Header */
+
+.site-header {
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.site-header .left, .doc-header .left {
+    float: left;
+}
+
+.site-header .right, .doc-header .right {
+    float: right;
+}
+
+.site-header .right a, .doc-header .right a {
+    padding-left: 10px;
+}
+
+.doc-header .left a {
+    text-decoration: none;
+}
+
+.doc-header {
+    position: sticky;
+    top: 0px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f3f3f3;
+    background-color: white;
+    z-index: 100 ;
+}
+
+.doc-list {
+    padding: 20px;
+}
+
+.doc-list li {
+    padding: 5px 0px;
+}
+
+/* hero */
+
+.hero {
+    padding: 50px 0px;
+}
+
+.hero h1 {
+    margin-bottom: 15px;
+}
+
+/*body */
+
+.body-section {
+    border-top: 2px solid #f3f3f3;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.site-body .section-title {
+    padding: 10px 0px;
+    font-size: 24px;
+}
+
+.chart-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.chart-card {
+    transition: 0.3s;
+    width: 33%;
+    display: block;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.chart-card:hover {
+    cursor: pointer;
+}
+
+.chart-card img {
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.chart-card .container {
+    padding: 10px 0px;
+    font-size: 13px;
+}
+
+.doc-body .left {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 72px;
+    width: 19rem;
+    border-right: 2px solid #f3f3f3;
+    overflow-y: auto;
+}
+
+.doc-body .right {
+    padding-left: 19rem;
+    padding-top: 40px;
+}
+
+.doc-body .left ul {
+    padding: 15px 0px;
+    list-style-type: none;
+}
+
+.doc-body .left li {
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 20px;
+}
+
+.doc-body .left ul a {
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.doc-body .left ul a:hover {
+    background-color: #f0f0f0;
+}
+
+.doc-body .left ul a.active {
+    background-color: #f0f0f0;
+}
+
+.chart-display-area {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    border-top: 1px solid #f3f3f3;
+}
+
+.chart-display-area .title h2 {
+    font-weight: 400;
+    color: black;
+}
+
+/* ace container */
+
+.ace-container {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px 0px;
+}
+
+.ace-container #editor {
+    width: 100%;
+}
+
+.doc-dv-chart {
+    width: 100%;
+    max-width: 700px;
+    margin: 20px 0px;
+}
+
+/*menu button */
+
+.menu-button {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-button .bar {
+    width: 25px;
+    height: 1px;
+    margin: 5px 0;
+    transition: 0.4s;
+    background-color: #333;
+}
+
+
+@media screen and (max-width: 900px) {
+    .home-page, .doc-page {
+        padding: 10px;
+    }
+
+    .menu-button {
+        display: inline-block;
+    }
+
+    .chart-card {
+        width: 50%;
+        padding: 5px;
+    }
+
+    .doc-body .left {
+        position: inherit;
+        width: 100%;
+        border: 2px solid #f3f3f3;
+    }
+
+    .doc-left-hide {
+        display: none;
+    }
+
+    .doc-header .link-list {
+        display: none;
+    }
+
+    .doc-body .left li {
+        padding-top: 10px;
+    }
+    
+
+    .doc-body .right {
+        padding: 20px 0px;
+    }
+
+    .doc-menu-hide {
+        display: none;
+    }
+
+    
+    
+}
+
+@media screen and (max-width: 400px) {
+    .site-header .right {
+        display: block;
+        padding-top: 25px;
+    }
+    
+}
