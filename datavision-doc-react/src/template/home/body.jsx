@@ -49,7 +49,7 @@ const Body = () => {
             </section>
 
             <section className="body-section">
-                <div className="home-footer">DATAVISION.JS is free to use under the <a href="">MIT License</a></div>
+                <div className="home-footer">DATAVISION.JS is free to use under the <a href="https://github.com/datavisionjs/datavision.js/blob/master/MIT%20License.md" target="_blank">MIT License</a></div>
             </section>
         </div>
     );
