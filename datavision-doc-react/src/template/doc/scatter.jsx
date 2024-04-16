@@ -5,30 +5,46 @@ const ScatterPage = () => {
     const studyTime = [1, 2, 3, 4, 5, 6, 7]; // Hours spent studying
     const testScores = [50, 55, 60, 65, 70, 75, 80]; // Corresponding test scores
     
+    const sales = [500, 400, 300, 200, 100]; //sales in USD
+    const category = ["Electronics", "Clothing", "Home Goods", "Books", "Toys"]; //different product categories
+
+    
     //variable for line chart
     const scatterChartData = [
         {
             values: studyTime,
             labels: testScores,
-            type: "scatter"
+            type: "scatter",
+            design: {
+                size: 5
+            }
         }
     ];
-    const scatterChartLayout = {title: "Datavision.js Scatter Chart"};
+    const scatterChartLayout = {
+        title: "Datavision.js Scatter Chart",
+        xAxis: {title: "Test Scores"},
+        yAxis: {title: "Study Time (hr)"}
+    };
 
     //varibale for multi line chart 
     const bubbleChartData = [
         {
-            values: studyTime,
-            labels: testScores,
-            type: "scatter",
+            values: sales,
+            labels: category,
+            type: "bubble",
             design: {
-                color: ["red", "green", "blue", "orange", "purple", "yellow", "cyan"],
-                size: [20, 10, 16, 9, 3, 15, 12]
+                color: ["red", "green", "blue", "orange", "purple"],
+                text: "% Market Share",
+                size: [30, 25, 20, 15, 10]
             }
         }
     ];
 
-    const bubbleChartLayout = {title: "Datavision.js Bubble Chart"};
+    const bubbleChartLayout = {
+        title: "Datavision.js Bubble Chart", 
+        xAxis: {title: "Category"},
+        yAxis: {title: "Sales (USD)"}
+    };
   
     return (
         <>
@@ -54,11 +70,18 @@ const ScatterPage = () => {
                         values: studyTime, 
                         labels: testScores, 
                         type: "scatter",
+                        design: {
+                            size: 5
+                        }
                     }
                     ]; 
 
                     //Define Layout
-                    const layout = {title: "-"};
+                    const layout = {
+                        title: "-",
+                        xAxis: {title: "Test Scores"},
+                        yAxis: {title: "Study Time (hr)"}
+                    };
 
                     const chart = new DataVision("my-chart");
                     chart.plot(data, layout);
@@ -73,25 +96,30 @@ const ScatterPage = () => {
                     data={bubbleChartData}
                     layout={bubbleChartLayout}
                     editorValue={`
-                    const studyTime = [1, 2, 3, 4, 5, 6, 7]; // Hours spent studying
-                    const testScores = [50, 55, 60, 65, 70, 75, 80]; // Corresponding test scores
+                    const sales = [500, 400, 300, 200, 100]; //sales in USD
+                    const category = ["Electronics", "Clothing", "Home Goods", "Books", "Toys"]; //different product categories
 
 
                     // Define Data
                     const data = [
                     {
-                        values: studyTime, 
-                        labels: testScores, 
-                        type: "scatter",
+                        values: sales,
+                        labels: category,
+                        type: "bubble",
                         design: {
-                        color: ["red", "green", "blue", "orange", "purple", "yellow", "cyan"],
-                        size: [20, 10, 16, 9, 3, 15, 12]
+                            color: ["red", "green", "blue", "orange", "purple"],
+                            text: "% Market Share",
+                            size: [30, 25, 20, 15, 10]
                         }
                     }
                     ]; 
 
                     //Define Layout
-                    const layout = {title: "-"};
+                    const layout = {
+                        title: "-",
+                        xAxis: {title: "Category"},
+                        yAxis: {title: "Sales (USD)"}
+                    };
 
                     const chart = new DataVision("my-chart");
                     chart.plot(data, layout);
