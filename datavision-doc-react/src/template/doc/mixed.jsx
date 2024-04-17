@@ -2,23 +2,31 @@ import ChartDisplaySection from "./chart-display-section";
 
 const MixedPage = () => {
 
-    const dates = ["2024-01-01", "2024-01-02", "2024-01-03", "2024-01-04", "2024-01-05"];
-    const stockPrices = [45, 70, 110, 70, 60]; // Stock prices for each corresponding date
+    const months = ["January", "February", "March", "April", "May", "June"];
+    const sales = [100, 120, 150, 180, 200, 220]; // Sales Revenue
+    const orders = [40, 60, 85, 100, 110, 120]; //Number of orders
+
 
     
     //variable for line chart
     const mixedChartData = [
         {
-            values: stockPrices,
-            labels: dates,
-            type: "bar"
+            values: orders,
+            labels: months,
+            type: "bar",
+            name: "Orders"
         },{
-            values: stockPrices,
-            labels: dates,
-            type: "line"
+            values: sales,
+            labels: months,
+            type: "line",
+            mode: "scatter",
+            name: "Sales"
         }
     ];
-    const mixedChartLayout = {title: "Datavision.js Mixed Chart"};
+    const mixedChartLayout = {
+        title: "Datavision.js Mixed Chart",
+        xAxis: {title: "Months"},
+    };
   
     return (
         <>
@@ -34,25 +42,32 @@ const MixedPage = () => {
                     data={mixedChartData}
                     layout={mixedChartLayout}
                     editorValue={`
-                    const dates = ["2024-01-01", "2024-01-02", "2024-01-03", "2024-01-04", "2024-01-05"];
-                    const stockPrices = [45, 70, 110, 70, 60]; // Stock prices for each corresponding date
+                    const months = ["January", "February", "March", "April", "May", "June"];
+                    const sales = [100, 120, 150, 180, 200, 220]; // Sales Revenue
+                    const orders = [40, 60, 85, 100, 110, 120]; //Number of orders
 
 
                     // Define Data
                     const data = [
                     {
-                        values: stockPrices,
-                        labels: dates,
-                        type: "bar"
+                        values: orders,
+                        labels: months,
+                        type: "bar",
+                        name: "Orders"
                     },{
-                        values: stockPrices,
-                        labels: dates,
-                        type: "line"
+                        values: sales,
+                        labels: months,
+                        type: "line",
+                        mode: "scatter",
+                        name: "Sales"
                         }
                     ]; 
 
                     //Define Layout
-                    const layout = {title: "-"};
+                    const layout = {
+                        title: "-",
+                        xAxis: {title: "Months"}
+                    };
 
                     const chart = new DataVision("my-chart");
                     chart.plot(data, layout);
